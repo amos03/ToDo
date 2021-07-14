@@ -1,0 +1,12 @@
+<h1>To Do List</h1>
+
+<ul>
+
+<% @todos.each do |todo| %>
+    <li><%= todo.task %> (<%= todo.description %>) Due on: <%= todo.deadline %>  <a href="/updateToDo/<%= todo.id %>">Update</a>, <a href="/deleteToDo/<%= todo.id %>">Delete</a></li>
+<% end %>
+
+</ul
+
+<div><a href="/createToDoForm">Create new task</a>
+</div>

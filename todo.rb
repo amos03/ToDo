@@ -8,12 +8,12 @@ ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'todo.sqli
 class ToDo < ActiveRecord::Base
 
     field :task, as: :string
-    field :deadline, as: :datetime
     field :description, as: :text
+    field :deadline, as: :date
 end
 
 ToDo.auto_upgrade!
 
 at_exit do
-    ActiveRecord::Base.connetion.close
+    ActiveRecord::Base.connection.close
 end

@@ -1,21 +1,22 @@
 <h1>Update Task</h1>
-<form action="/ToDoUpdate/<%= @todo.id %>" method="post">
+<form action="/updateToDo/<%= @todo.id %>" method="post">
 
   <div>
   <label for="task">Task Name:</label>
-  <input type="text" name="task" id="task">
-  </div>
-  
-  <div>
-  <label for="deadline">Deadline:</label>
-  <input type="number" name="deadline" id="deadline">
+  <input type="text" name="task" id="task" value="<% @todo.task %>">
   </div>
   
   <div>
   <label for="description">Description:</label>
-  <input type="text" name="description" id="description">
+  <input type="text" name="description" id="description" value="<% @todo.description %>">
   </div>
   
+  <div>
+  <label for="deadline">Deadline:</label>
+  <input type="date" name="deadline" id="deadline" value="<% @todo.deadline %>">
+  </div>
+
+
   <input type="submit" value="Update Task">
   
 </form>
